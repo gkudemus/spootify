@@ -31,35 +31,6 @@ const Discover = () => {
   }, [spotifyClientId, spotifyClientSecret])
   
   const fetchData = async(token) => {
-    // multiple requests using async await - this will display the three sections too
-    // await axios('https://api.spotify.com/v1/browse/new-releases', {
-    //   method: 'GET',
-    //   headers: { 'Authorization' : 'Bearer ' + token}
-    // }).then(newReleasesResponse => {
-    //   setNewReleases(newReleasesResponse.data.albums.items)
-    // }).catch(newReleasesError => {
-    //   console.log('Error fetching New Releases... ', newReleasesError )
-    // })
-
-    // await axios('https://api.spotify.com/v1/browse/featured-playlists', {
-    //   method: 'GET',
-    //   headers: { 'Authorization' : 'Bearer ' + token}
-    // }).then(featuredPlaylistResponse => {
-    //   setPlaylists(featuredPlaylistResponse.data.playlists.items)
-    // }).catch(featurePlaylistError => {
-    //   console.log('Error fetching Featured Playlist... ', featurePlaylistError)
-    // })
-
-    // await axios('https://api.spotify.com/v1/browse/categories', {
-    //   method: 'GET',
-    //   headers: { 'Authorization' : 'Bearer ' + token}
-    // }).then(categoriesResponse => {        
-    //   setCategories(categoriesResponse.data.categories.items)
-    // }).catch(categoriesErrors => {
-    //   console.log('Error fetching Categories...', categoriesErrors)
-    // })
-
-    // multiple requests using Promise.all - this will display the three sections as well
     const getNewReleases = axios.get('https://api.spotify.com/v1/browse/new-releases', {
       method: 'GET',
       headers: { 'Authorization' : 'Bearer ' + token}
